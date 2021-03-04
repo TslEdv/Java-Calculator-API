@@ -16,4 +16,18 @@ public class CalculatorService {
         }
         return evens;
     }
+    public Float averageOfPositives(List<Float> numbers){
+        List<Float> positives = new ArrayList<>();
+        for (Float number : numbers) {
+            if(number > 0){
+                positives.add(number);
+            }
+        }
+        float sum = 0;
+        for (Float positive : positives) {
+            sum = positive + sum;
+        }
+        sum = sum / positives.size();
+        return sum;
+    }
 }
