@@ -1,5 +1,11 @@
 package ee.taltech.a_theory2.question2contribution;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("phones")
 public class API1_Phones {
 
     // todo this is contribution question
