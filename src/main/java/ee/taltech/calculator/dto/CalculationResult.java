@@ -8,7 +8,7 @@ import java.util.List;
 @Setter
 public class CalculationResult {
     private Integer maxEven;
-    private Integer minOdds;
+    private Integer minOdd;
     private List<Integer> even;
     private List<Integer> squared;
     private Float averageOfPositives;
