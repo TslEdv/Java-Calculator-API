@@ -55,13 +55,21 @@ public class CalculatorService {
     }
 
     public Integer minOdd(List<Integer> numbers) {
+        if (numbers == null) {
+            return null;
+        }
         List<Integer> odds = new ArrayList<>();
         for (Integer integer : numbers) {
             if (integer % 2 == 1) {
                 odds.add(integer);
             }
         }
-        int min = Collections.min(odds);
+        Integer min;
+        if (odds.isEmpty()) {
+            min = null;
+        } else {
+            min = Collections.min(odds);
+        }
         return min;
     }
 

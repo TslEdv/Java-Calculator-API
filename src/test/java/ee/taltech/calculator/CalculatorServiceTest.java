@@ -32,4 +32,18 @@ public class CalculatorServiceTest {
         assertNull(calculatorService.maxEven(List.of(1,-3,-5,7)));
     }
 
+    @Test
+    void minOddReturnsSmallestOddNumber() {
+        assertEquals(1, calculatorService.minOdd(List.of(1,2,4,6)));
+    }
+
+    @Test
+    void minOddNullArrayReturnsNull() {
+        assertNull(calculatorService.minOdd(null));
+    }
+
+    @Test
+    void minOddReturnsSmallestOddNegativeNumber() {
+        assertEquals(-7, calculatorService.minOdd(List.of(-1,-2,-4,-7)));
+    }
 }
