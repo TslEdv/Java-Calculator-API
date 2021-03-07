@@ -58,19 +58,7 @@ public class CalculatorService {
         if (numbers == null) {
             return null;
         }
-        List<Integer> odds = new ArrayList<>();
-        for (Integer integer : numbers) {
-            if (integer % 2 == 1) {
-                odds.add(integer);
-            }
-        }
-        Integer min;
-        if (odds.isEmpty()) {
-            min = null;
-        } else {
-            min = Collections.min(odds);
-        }
-        return min;
+        return numbers.stream().filter(i -> i % 2 != 0).min(Integer::compare).orElse(null);
     }
 
     public List<Integer> squared(List<Integer> integers) {

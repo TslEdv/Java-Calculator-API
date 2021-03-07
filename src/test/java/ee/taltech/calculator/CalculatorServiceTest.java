@@ -51,4 +51,29 @@ public class CalculatorServiceTest {
     void minOddReturnsSmallestOddNegativeNumber() {
         assertEquals(-7, calculatorService.minOdd(List.of(-1,-2,-4,-7)));
     }
+
+    @Test
+    void minOddReturnsNullIfListIsOnlyEvenNumbers() {
+        assertNull(calculatorService.minOdd(List.of(2,-4,-6,8)));
+    }
+
+    @Test
+    void evenReturnsEvenNumbers() {
+        assertEquals(List.of(2,4,6), calculatorService.even(List.of(1,2,3,4,6)));
+    }
+
+    @Test
+    void evenNullArrayReturnsNull() {
+        assertNull(calculatorService.minOdd(null));
+    }
+
+    @Test
+    void evenReturnsNegativeEvenNumbers() {
+        assertEquals(List.of(-2,-4,-6),calculatorService.even(List.of(-1,-2,-3,-4,-5,-6)));
+    }
+
+    @Test
+    void evenReturnsNullIfOnlyOddNumbers() {
+        assertEquals(List.of(-2,-4,-6),calculatorService.even(List.of(1,3,5,7)));
+    }
 }
