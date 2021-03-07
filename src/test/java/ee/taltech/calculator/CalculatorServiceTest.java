@@ -38,42 +38,50 @@ public class CalculatorServiceTest {
     }
 
     @Test
+    @DisplayName("Returns smallest odd number out of the list")
     void minOddReturnsSmallestOddNumber() {
         assertEquals(1, calculatorService.minOdd(List.of(1,2,4,6)));
     }
 
     @Test
+    @DisplayName("Returns Null if the array is null")
     void minOddNullArrayReturnsNull() {
         assertNull(calculatorService.minOdd(null));
     }
 
     @Test
+    @DisplayName("Returns smallest odd negative number out of the list")
     void minOddReturnsSmallestOddNegativeNumber() {
         assertEquals(-7, calculatorService.minOdd(List.of(-1,-2,-4,-7)));
     }
 
     @Test
+    @DisplayName("Returns null if the list is only even numbers")
     void minOddReturnsNullIfListIsOnlyEvenNumbers() {
         assertNull(calculatorService.minOdd(List.of(2,-4,-6,8)));
     }
 
     @Test
+    @DisplayName("Returns even numbers out of the list")
     void evenReturnsEvenNumbers() {
         assertEquals(List.of(2,4,6), calculatorService.even(List.of(1,2,3,4,6)));
     }
 
     @Test
+    @DisplayName("Returns null if the list is null")
     void evenNullArrayReturnsNull() {
         assertNull(calculatorService.minOdd(null));
     }
 
     @Test
+    @DisplayName("Returns negative even numbers out of the list")
     void evenReturnsNegativeEvenNumbers() {
         assertEquals(List.of(-2,-4,-6),calculatorService.even(List.of(-1,-2,-3,-4,-5,-6)));
     }
 
     @Test
+    @DisplayName("Returns null if there are only odd numbers")
     void evenReturnsNullIfOnlyOddNumbers() {
-        assertEquals(List.of(-2,-4,-6),calculatorService.even(List.of(1,3,5,7)));
+        assertNull(calculatorService.even(List.of(1,3,5,7)));
     }
 }

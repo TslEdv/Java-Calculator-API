@@ -17,6 +17,9 @@ public class CalculatorService {
                 evens.add(integer);
             }
         }
+        if (evens.isEmpty()){
+            return null;
+        }
         return evens;
     }
 
@@ -70,6 +73,9 @@ public class CalculatorService {
     }
 
     public CalculationResult calculate1(List<Integer> numbers) {
+        if(numbers.isEmpty()){
+            return null;
+        }
         CalculationResult result = new CalculationResult();
         result.setMaxEven(maxEven(numbers));
         result.setMinOdd(minOdd(numbers));
@@ -78,6 +84,9 @@ public class CalculatorService {
     }
 
     public CalculationResult calculate2(List<Integer> numbers) {
+        if(numbers.isEmpty()){
+            return null;
+        }
         CalculationResult result = new CalculationResult();
         result.setSquared(squared(numbers));
         result.setMaxEven(maxEven(numbers));
