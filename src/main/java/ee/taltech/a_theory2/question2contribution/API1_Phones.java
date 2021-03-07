@@ -2,6 +2,7 @@ package ee.taltech.a_theory2.question2contribution;
 
 import ee.taltech.a_theory2.question2contribution.classes.Phone;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,10 +29,14 @@ public class API1_Phones {
     // B Add a method to query all the phones (method content is not important - I am grading urls, annotations, names, and parameters)
     @GetMapping("/")
     public List<Phone> phones(){
-
+        return Phone.getPhones();
     }
 
     // C Add a method to query a single phone by it's unique identifier (method content is not important - I am grading urls, annotations, names, and parameters)
+    @GetMapping("/{id}")
+    public Phone phone(PathVariable id){
+
+    }
     // D Modify an existing method to query/filter phones by manufacturer while keeping existing functionality
     // E Modify an existing method to query/filter phones by release year while keeping existing functionality
 
