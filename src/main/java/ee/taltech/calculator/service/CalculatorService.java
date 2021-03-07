@@ -67,4 +67,11 @@ public class CalculatorService {
         result.setEven(even(numbers));
         return result;
     }
+    public CalculationResult calculate2(List<Integer> numbers){
+        CalculationResult result = new CalculationResult();
+        result.setSquared(squared(numbers));
+        result.setMaxEven(maxEven(numbers));
+        result.setAverageOfPositives(averageOfPositives(numbers));
+        return result;
+    }
 }
