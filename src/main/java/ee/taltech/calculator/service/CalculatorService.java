@@ -10,19 +10,20 @@ import java.util.List;
 
 @Service
 public class CalculatorService {
-    private List<Integer> even(List<Integer> integers){
+    public List<Integer> even(List<Integer> integers) {
         List<Integer> evens = new ArrayList<>();
-        for (Integer integer : integers){
-            if(integer %2 == 0) {
+        for (Integer integer : integers) {
+            if (integer % 2 == 0) {
                 evens.add(integer);
             }
         }
         return evens;
     }
-    private Float averageOfPositives(List<Integer> numbers){
+
+    public Float averageOfPositives(List<Integer> numbers) {
         List<Integer> positives = new ArrayList<>();
         for (Integer number : numbers) {
-            if(number > 0){
+            if (number > 0) {
                 positives.add(number);
             }
         }
@@ -33,41 +34,54 @@ public class CalculatorService {
         sum = sum / positives.size();
         return sum;
     }
-    private Integer maxEven(List<Integer> numbers){
+
+    public Integer maxEven(List<Integer> numbers) {
+        if (numbers == null) {
+            return null;
+        }
         List<Integer> evens = new ArrayList<>();
         for (Integer integer : numbers) {
-            if(integer %2 == 0) {
+            if (integer % 2 == 0) {
                 evens.add(integer);
             }
         }
-        int max = Collections.max(evens);
+        Integer max;
+        if (evens.isEmpty()) {
+            max = null;
+        } else {
+            max = Collections.max(evens);
+        }
         return max;
     }
-    private Integer minOdd(List<Integer> numbers){
+
+    public Integer minOdd(List<Integer> numbers) {
         List<Integer> odds = new ArrayList<>();
         for (Integer integer : numbers) {
-            if(integer %2 == 1) {
+            if (integer % 2 == 1) {
                 odds.add(integer);
             }
         }
         int min = Collections.min(odds);
         return min;
     }
-    private List<Integer> squared(List<Integer> integers){
+
+    public List<Integer> squared(List<Integer> integers) {
         List<Integer> squared = new ArrayList<>();
         for (Integer integer : integers) {
-            squared.add(integer*integer);
+            squared.add(integer * integer);
         }
         return squared;
     }
-    public CalculationResult calculate1(List<Integer> numbers){
+
+    public CalculationResult calculate1(List<Integer> numbers) {
         CalculationResult result = new CalculationResult();
         result.setMaxEven(maxEven(numbers));
         result.setMinOdd(minOdd(numbers));
         result.setEven(even(numbers));
         return result;
     }
-    public CalculationResult calculate2(List<Integer> numbers){
+
+    public CalculationResult calculate2(List<Integer> numbers) {
         CalculationResult result = new CalculationResult();
         result.setSquared(squared(numbers));
         result.setMaxEven(maxEven(numbers));
