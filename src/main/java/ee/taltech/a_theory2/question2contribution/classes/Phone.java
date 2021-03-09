@@ -7,7 +7,4 @@ public class Phone {
     private String modelNr;
     private String rating;
     private String releaseYear;
-    //... and more
-
-    //getters and setters
 }
