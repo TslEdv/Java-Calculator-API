@@ -9,5 +9,6 @@ public class MaxEven {
         if (numbers == null) {
             return null;
         }
-        return numbers.stream().filter(e-> e%2 == 0).max(Integer::compare).orElse(null);
+        return numbers.stream().filter(e -> e % 2 == 0).max(Integer::compare).orElse(null);
+    }
 }
