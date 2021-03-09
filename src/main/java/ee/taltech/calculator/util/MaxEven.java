@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MaxEven {
-    public Integer maxEven(List<Integer> numbers) {
+    public static Integer maxEven(List<Integer> numbers) {
         if (numbers == null) {
             return null;
         }

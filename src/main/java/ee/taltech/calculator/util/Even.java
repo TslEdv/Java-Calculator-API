@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Even {
-    public List<Integer> even(List<Integer> integers) {
+    public static List<Integer> even(List<Integer> integers) {
       if(integers == null){
           return null;
       }

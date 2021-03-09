@@ -11,5 +11,5 @@ public class CalculationResult {
     private Integer minOdd;
     private List<Integer> even;
     private List<Integer> squared;
-    private Float averageOfPositives;
+    private Double averageOfPositives;
 }

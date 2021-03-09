@@ -3,7 +3,7 @@ package ee.taltech.calculator.util;
 import java.util.List;
 
 public class MinOdd {
-        public Integer minOdd(List<Integer> numbers) {
+        public static Integer minOdd(List<Integer> numbers) {
             if (numbers == null) {
                 return null;
             }
