@@ -81,8 +81,10 @@ public class CalculatorServiceTest {
     }
 
     @Test
-    @DisplayName("Returns null if there are only odd numbers")
-    void evenReturnsNullIfOnlyOddNumbers() {
-        assertNull(Even.even(List.of(1,3,5,7)));
+    @DisplayName("Returns empty list if there are only odd numbers")
+    void evenReturnsEmptyListIfOnlyOddNumbers() {
+        assertEquals(List.of(), Even.even(List.of(1,3,5,7)));
     }
+    //TODO: even, squared, services null input
+
 }
