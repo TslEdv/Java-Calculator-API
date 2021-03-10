@@ -1,5 +1,6 @@
 package ee.taltech.calculator;
 
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,5 +83,25 @@ class CalculationControllerTest {
 				.andExpect(jsonPath("$.maxEven").doesNotExist())
 				.andExpect(jsonPath("$.minOdd").value(1))
 				.andExpect(jsonPath("$.even").doesNotExist());
+	}
+	@Test
+	@DisplayName("Calculator2 test with positives and negatives")
+	void Calculator2TestWithPositivesAndNegatives() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculator2?input=1,2,-2,-1"))
+				.andExpect(status().is2xxSuccessful())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder("1","1","4","4")))
+				.andExpect(jsonPath("$.maxEven").value(2))
+				.andExpect(jsonPath("$.averageOfPositives").value(1.5);
+	}
+	@Test
+	@DisplayName("Calculator2 test with positives")
+	void Calculator2TestWithPositivesAndNegatives() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculator2?input=2,3,6"))
+				.andExpect(status().is2xxSuccessful())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder("4","9","36")))
+				.andExpect(jsonPath("$.maxEven").value(6))
+				.andExpect(jsonPath("$.averageOfPositives").value(5.5);
 	}
 }
