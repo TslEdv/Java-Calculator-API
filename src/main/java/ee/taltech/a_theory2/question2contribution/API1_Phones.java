@@ -27,7 +27,7 @@ public class API1_Phones {
     // A Add necessary annotations to this class so this class can serve data
     // B Add a method to query all the phones (method content is not important - I am grading urls, annotations, names, and parameters)
     @GetMapping("/")
-    public List<Phone> phones(@RequestParam Integer year, @RequestParam String manufacturer){
+    public List<Phone> phones(@RequestParam Optional<Integer> year, @RequestParam Optional<String> manufacturer){
         if ((year == null || year == "")  && (manufacturer == null || manufacturer == "")) {
             return getPhones();
         }
