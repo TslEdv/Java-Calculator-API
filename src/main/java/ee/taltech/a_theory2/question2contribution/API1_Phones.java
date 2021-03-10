@@ -28,6 +28,7 @@ public class API1_Phones {
     // B Add a method to query all the phones (method content is not important - I am grading urls, annotations, names, and parameters)
     @GetMapping("/")
     public List<Phone> phones(@RequestParam Optional<Integer> year, @RequestParam Optional<String> manufacturer){
+        /*
         if ((year == null || year == "")  && (manufacturer == null || manufacturer == "")) {
             return getPhones();
         }
@@ -38,17 +39,23 @@ public class API1_Phones {
             return getPhones(manufacturer);
         }
         return getPhones(year, manufacturer);
+         */
+        return null;
     }
     // C Add a method to query a single phone by it's unique identifier (method content is not important - I am grading urls, annotations, names, and parameters)
     @GetMapping("/{id}")
     public Phone phone(@PathVariable long id){
+        /*
         return Phone.getPhone(id);
+         */
+        return null;
     }
     // D Modify an existing method to query/filter phones by manufacturer while keeping existing functionality
     // E Modify an existing method to query/filter phones by release year while keeping existing functionality
 
     //todo theoretical assignment
     // F write pseudocode for saving a new phone (add annotations or http method names, urls, necessary parameters)
+    /*
     @PostMapping("/createPhone")
     public void newPhone(@RequestParam String manufacturer, @RequestParam String modelNr, @RequestParam Integer year){
         Phone phone = new Phone(); //constructor generates ID automatically
@@ -69,4 +76,5 @@ public class API1_Phones {
     public void deletePhone(@RequestParam long id){
         deletePhone(getPhone(id));
     }
+     */
 }

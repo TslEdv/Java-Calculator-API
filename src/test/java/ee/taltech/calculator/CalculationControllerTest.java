@@ -10,6 +10,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.util.Collections;
+import java.util.List;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @AutoConfigureMockMvc
@@ -82,26 +85,66 @@ class CalculationControllerTest {
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$.maxEven").doesNotExist())
 				.andExpect(jsonPath("$.minOdd").value(1))
-				.andExpect(jsonPath("$.even").doesNotExist());
+				.andExpect(jsonPath("$.even").value(Matchers.empty()));
 	}
 	@Test
 	@DisplayName("Calculator2 test with positives and negatives")
 	void Calculator2TestWithPositivesAndNegatives() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculator2?input=1,2,-2,-1"))
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2?input=1,2,-2,-1"))
 				.andExpect(status().is2xxSuccessful())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder("1","1","4","4")))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder(1,1,4,4)))
 				.andExpect(jsonPath("$.maxEven").value(2))
-				.andExpect(jsonPath("$.averageOfPositives").value(1.5);
+				.andExpect(jsonPath("$.averageOfPositives").value(1.5));
 	}
 	@Test
 	@DisplayName("Calculator2 test with positives")
-	void Calculator2TestWithPositivesAndNegatives() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculator2?input=2,3,6"))
+	void Calculator2TestWithPositives() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2?input=2,3,7"))
 				.andExpect(status().is2xxSuccessful())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder("4","9","36")))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder(4,9,49)))
+				.andExpect(jsonPath("$.maxEven").value(2))
+				.andExpect(jsonPath("$.averageOfPositives").value(4));
+	}
+	@Test
+	@DisplayName("Calculator2 test with negatives")
+	void Calculator2TestWithNegatives() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2?input=-2,-3,-6"))
+				.andExpect(status().is2xxSuccessful())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder(4,9,36)))
+				.andExpect(jsonPath("$.maxEven").value(-2))
+				.andExpect(jsonPath("$.averageOfPositives").value(0));
+	}
+	@Test
+	@DisplayName("Calculator2 test with odd numbers")
+	void Calculator2TestWithOddNumbers() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2?input=1,3,5"))
+				.andExpect(status().is2xxSuccessful())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder(1,9,25)))
+				.andExpect(jsonPath("$.maxEven").doesNotExist())
+				.andExpect(jsonPath("$.averageOfPositives").value(3));
+	}
+	@Test
+	@DisplayName("Calculator2 test with even numbers")
+	void Calculator2TestWithEvenNumbers() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2?input=2,4,-6"))
+				.andExpect(status().is2xxSuccessful())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder(4,16,36)))
+				.andExpect(jsonPath("$.maxEven").value(4))
+				.andExpect(jsonPath("$.averageOfPositives").value(3));
+	}
+	@Test
+	@DisplayName("Calculator2 test with odd and even numbers")
+	void Calculator2TestWithOddAndEvenNumbers() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2?input=-3,2,6"))
+				.andExpect(status().is2xxSuccessful())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder(9,4,36)))
 				.andExpect(jsonPath("$.maxEven").value(6))
-				.andExpect(jsonPath("$.averageOfPositives").value(5.5);
+				.andExpect(jsonPath("$.averageOfPositives").value(4));
 	}
 }
