@@ -26,12 +26,12 @@ public class API1_Phones {
     // Management wants to define an API endpoint so frontend can display data about phones (think phone e-shop)
     // A Add necessary annotations to this class so this class can serve data
     // B Add a method to query all the phones (method content is not important - I am grading urls, annotations, names, and parameters)
-    @GetMapping("/")
+    @GetMapping(value="/")
     public List<Phone> phones(@RequestParam Optional<Integer> year, Optional<String> manufacturer){
         return null;
     }
     // C Add a method to query a single phone by it's unique identifier (method content is not important - I am grading urls, annotations, names, and parameters)
-    @GetMapping("/{id}")
+    @GetMapping(value="/{id}")
     public Phone phone(@PathVariable Long id){
         return null;
     }
@@ -41,7 +41,7 @@ public class API1_Phones {
     //todo theoretical assignment
     // F write pseudocode for saving a new phone (add annotations or http method names, urls, necessary parameters)
     /*
-    @PostMapping("/createPhone")
+    @PostMapping(value="/createPhone")
     public void newPhone(@RequestParam String manufacturer, String modelNr, Integer year){
         Phone phone = new Phone(); //constructor generates ID automatically
         phone.setManufacturer(manufacturer);
@@ -49,7 +49,7 @@ public class API1_Phones {
         phone.setReleaseYear(year);
     }
     // G write pseudocode for updating existing phone (add annotations or http method names, urls, necessary parameters)
-    @PostMapping("/updatePhone")
+    @PostMapping(value="/updatePhone")
     public void updatePhone(@RequestParam long id, Optional<String> manufacturer, Optional<String> modelNr, Optional<Integer> year){
         Phone phone = getPhone(id);
         phone.setManufacturer(manufacturer);
@@ -57,7 +57,7 @@ public class API1_Phones {
         phone.setReleaseYear(year);
     }
     // H write pseudocode for deleting a phone (add annotations or http method names, urls, necessary parameters)
-    @PostMapping("/deletePhone")
+    @PostMapping(value="/deletePhone")
     public void deletePhone(@RequestParam long id){
         deletePhone(getPhone(id));
     }
