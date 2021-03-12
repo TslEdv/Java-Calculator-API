@@ -32,7 +32,7 @@ public class API1_Phones {
     }
     // C Add a method to query a single phone by it's unique identifier (method content is not important - I am grading urls, annotations, names, and parameters)
     @GetMapping("/{id}")
-    public Phone phone(@PathVariable long id){
+    public Phone phone(@PathVariable Long id){
         return null;
     }
     // D Modify an existing method to query/filter phones by manufacturer while keeping existing functionality
