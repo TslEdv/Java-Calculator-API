@@ -26,27 +26,15 @@ public class API1_Phones {
     // Management wants to define an API endpoint so frontend can display data about phones (think phone e-shop)
     // A Add necessary annotations to this class so this class can serve data
     // B Add a method to query all the phones (method content is not important - I am grading urls, annotations, names, and parameters)
-    /*
     @GetMapping("/")
     public List<Phone> phones(@RequestParam Optional<Integer> year, Optional<String> manufacturer){
-        /*
-        if ((year == null || year == "")  && (manufacturer == null || manufacturer == "")) {
-            return getPhones();
-        }
-        else if (manufacturer == null || manufacturer == "") {
-            return getPhones(year);
-        }
-        else if (year == null || year == ""){
-            return getPhones(manufacturer);
-        }
-        return getPhones(year, manufacturer);
+        return null;
     }
     // C Add a method to query a single phone by it's unique identifier (method content is not important - I am grading urls, annotations, names, and parameters)
     @GetMapping("/{id}")
     public Phone phone(@PathVariable long id){
-        return Phone.getPhone(id);
+        return null;
     }
-     */
     // D Modify an existing method to query/filter phones by manufacturer while keeping existing functionality
     // E Modify an existing method to query/filter phones by release year while keeping existing functionality
 
