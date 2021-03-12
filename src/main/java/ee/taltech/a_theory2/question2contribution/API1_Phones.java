@@ -28,7 +28,7 @@ public class API1_Phones {
     // B Add a method to query all the phones (method content is not important - I am grading urls, annotations, names, and parameters)
     /*
     @GetMapping("/")
-    public List<Phone> phones(@RequestParam Optional<Integer> year, @RequestParam Optional<String> manufacturer){
+    public List<Phone> phones(@RequestParam Optional<Integer> year, Optional<String> manufacturer){
         /*
         if ((year == null || year == "")  && (manufacturer == null || manufacturer == "")) {
             return getPhones();
@@ -54,7 +54,7 @@ public class API1_Phones {
     // F write pseudocode for saving a new phone (add annotations or http method names, urls, necessary parameters)
     /*
     @PostMapping("/createPhone")
-    public void newPhone(@RequestParam String manufacturer, @RequestParam String modelNr, @RequestParam Integer year){
+    public void newPhone(@RequestParam String manufacturer, String modelNr, Integer year){
         Phone phone = new Phone(); //constructor generates ID automatically
         phone.setManufacturer(manufacturer);
         phone.setModel(modelNr);
@@ -62,7 +62,7 @@ public class API1_Phones {
     }
     // G write pseudocode for updating existing phone (add annotations or http method names, urls, necessary parameters)
     @PostMapping("/updatePhone")
-    public void updatePhone(@RequestParam long id, @RequestParam Optional<String> manufacturer, @RequestParam Optional<String> modelNr, @RequestParam Optional<Integer> year){
+    public void updatePhone(@RequestParam long id, Optional<String> manufacturer, Optional<String> modelNr, Optional<Integer> year){
         Phone phone = getPhone(id);
         phone.setManufacturer(manufacturer);
         phone.setModel(modelNr);
