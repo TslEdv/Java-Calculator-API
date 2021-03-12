@@ -88,6 +88,12 @@ class CalculationControllerTest {
 				.andExpect(jsonPath("$.even").value(Matchers.empty()));
 	}
 	@Test
+	@DisplayName("Calculator2 Test on no input")
+	void Calculator2TestWithNoInput() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2"))
+				.andExpect(status().is4xxClientError());
+	}
+	@Test
 	@DisplayName("Calculator2 test with positives and negatives")
 	void Calculator2TestWithPositivesAndNegatives() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2?input=1,2,-2,-1"))
