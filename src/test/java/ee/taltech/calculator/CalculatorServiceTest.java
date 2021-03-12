@@ -1,10 +1,7 @@
 package ee.taltech.calculator;
 
 import ee.taltech.calculator.service.CalculatorService;
-import ee.taltech.calculator.util.Even;
-import ee.taltech.calculator.util.MaxEven;
-import ee.taltech.calculator.util.MinOdd;
-import ee.taltech.calculator.util.Squared;
+import ee.taltech.calculator.util.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -88,7 +85,6 @@ public class CalculatorServiceTest {
     }
     //TODO: tests for squared, average of positives
 
-
     @Test
     @DisplayName("Squared returns null on null input")
     void squaredNullInputReturnsNull() {
@@ -103,5 +99,31 @@ public class CalculatorServiceTest {
     @DisplayName("Squared returns squares of negative numbers")
     void squaredReturnsSquaresOnNegatives() {
         assertEquals(List.of(1, 4, 9), Squared.squared(List.of(-1, -2, -3)));
+    }
+    @Test
+    @DisplayName("Squared returns squares of positive and negative numbers")
+    void squaredReturnsSquaresOnPositivesAndNegatives() {
+        assertEquals(List.of(1, 4, 9, 16), Squared.squared(List.of(1, -2, 3, -4)));
+    }
+
+    @Test
+    @DisplayName("AverageOfPositives returns null on null input")
+    void averageOfPositivesReturnsNullOnNullInput() {
+        assertNull(AverageOfPositives.averageOfPositives(null));
+    }
+    @Test
+    @DisplayName("AverageOfPositives returns integer of positive number input")
+    void averageOfPositivesReturnsAverageOfPositives() {
+        assertEquals(4,AverageOfPositives.averageOfPositives(List.of(2,4,6)));
+    }
+    @Test
+    @DisplayName("AverageOfPositives does not take negatives into account")
+    void averageOfPositivesOnlyCalculatesPositives() {
+        assertEquals(4,AverageOfPositives.averageOfPositives(List.of(2,-6,4,6,-8)));
+    }
+    @Test
+    @DisplayName("AverageOfPositives returns 0 on negative numbers")
+    void averageOfPositivesReturnsZeroOnNegatives() {
+        assertEquals(0,AverageOfPositives.averageOfPositives(List.of(-2,-4,-6)));
     }
 }

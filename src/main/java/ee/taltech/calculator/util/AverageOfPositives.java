@@ -9,5 +9,6 @@ public class AverageOfPositives {
             return null;
         }
         return numbers.stream().filter(e-> e>0).mapToDouble(e->e).average().orElse(0);
+        //TODO: round
     }
 }
