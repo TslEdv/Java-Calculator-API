@@ -38,7 +38,7 @@ class CalculationControllerTest {
 				.andExpect(jsonPath("$.maxEven").value(4))
 				.andExpect(jsonPath("$.minOdd").value(1))
 				.andExpect(jsonPath("$.even").exists())
-				.andExpect(jsonPath("$.even[1]").value(4));
+				.andExpect(jsonPath("$.even").value(Matchers.containsInAnyOrder(2,4)));
 	}
 
 	@Test
@@ -50,7 +50,7 @@ class CalculationControllerTest {
 				.andExpect(jsonPath("$.maxEven").value(-2))
 				.andExpect(jsonPath("$.minOdd").value(-5))
 				.andExpect(jsonPath("$.even").exists())
-				.andExpect(jsonPath("$.even[1]").value(-4));
+				.andExpect(jsonPath("$.even").value(Matchers.containsInAnyOrder(-2,-4)));
 	}
 
 	@Test
@@ -62,7 +62,7 @@ class CalculationControllerTest {
 				.andExpect(jsonPath("$.maxEven").value(4))
 				.andExpect(jsonPath("$.minOdd").value(-5))
 				.andExpect(jsonPath("$.even").exists())
-				.andExpect(jsonPath("$.even[1]").value(4));
+				.andExpect(jsonPath("$.even").value(Matchers.containsInAnyOrder(2,4)));
 	}
 
 	@Test
@@ -74,7 +74,7 @@ class CalculationControllerTest {
 				.andExpect(jsonPath("$.maxEven").value(6))
 				.andExpect(jsonPath("$.minOdd").doesNotExist())
 				.andExpect(jsonPath("$.even").exists())
-				.andExpect(jsonPath("$.even[1]").value(4));
+				.andExpect(jsonPath("$.even").value(Matchers.containsInAnyOrder(2,4,6)));
 	}
 
 	@Test
