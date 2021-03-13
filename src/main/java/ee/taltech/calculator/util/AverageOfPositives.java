@@ -8,7 +8,7 @@ public class AverageOfPositives {
         if(numbers == null){
             return null;
         }
-        return numbers.stream().filter(e-> e>0).mapToDouble(e->e).average().orElse(0);
-        //TODO: round
+        Double average = numbers.stream().filter(e-> e>0).mapToDouble(e->e).average().orElse(0);
+        return ((double)(Math.round(average*100)))/100;
     }
 }
