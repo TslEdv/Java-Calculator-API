@@ -4,6 +4,7 @@ import ee.taltech.a_theory2.question2contribution.classes.Headphone;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("headphones")
@@ -24,7 +25,7 @@ public class API3_Headphones {
     // Management wants to define an API endpoint so frontend can display data about headphones (think headphones e-shop)
     // A Add necessary annotations to this class so this class can serve data
     // B Add a method to query all the headphones (method content is not important - I am grading urls, annotations, names, and parameters)
-    @GetMapping(value = "/")
+    /* @GetMapping(value = "/")
     public List<Headphone> headphones(@RequestParam String price, String anc){
         return null;
     }
@@ -33,12 +34,29 @@ public class API3_Headphones {
     public Headphone headphone(@PathVariable Long id){
         return null;
     }
+     */
     // D Modify an existing method to query/filter headphones by price while keeping existing functionality (price can be a string)
 
     // E Modify an existing method to query/filter anc (active noise cancellation) while keeping existing functionality (anc can be a string)
 
     //todo theoretical assignment
     // F write pseudocode for saving a new pair of headphones (add annotations or http method names, urls, necessary parameters)
+    // @GetMapping(value = "/createHeadphone")
+    // public void createHeadphone(@RequestParam  String manufacturer, String price, String anc, String rating, String releaseYear){
+    // }
     // G write pseudocode for updating existing pair of headphones (add annotations or http method names, urls, necessary parameters)
+    /* @GetMapping(value = "/updateHeadphone")
+      public void updateHeadphone(@RequestParam Long id, Optional<String> manufacturer, Optional<String> price, Optional<String> anc, Optional<String> rating, Optional<String> releaseYear){
+        Headphone headphone = new Headphone();
+        headphone.setPrice(price);
+        headphone.setAnc(anc);
+        headphone.setRating(rating);
+        headphone.setReleaseYear(releaseYear);
+        headphone.setManufacturer(manufacturer);
+
+    }
+     */
     // H write pseudocode for deleting a pair of headphones (add annotations or http method names, urls, necessary parameters)
+    //
+    //
 }
