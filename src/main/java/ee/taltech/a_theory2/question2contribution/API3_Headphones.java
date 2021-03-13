@@ -57,6 +57,11 @@ public class API3_Headphones {
     }
      */
     // H write pseudocode for deleting a pair of headphones (add annotations or http method names, urls, necessary parameters)
+    /* @GetMapping(value = "/removeHeadphone")
+    public void removeHeadphone(@RequestParam Long id){
+        removeHeadphone(getHeadphone(id));
+    }
+    */
     //
     //
 }
