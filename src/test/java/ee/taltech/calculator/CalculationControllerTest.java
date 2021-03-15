@@ -153,4 +153,14 @@ class CalculationControllerTest {
 				.andExpect(jsonPath("$.maxEven").value(6))
 				.andExpect(jsonPath("$.averageOfPositives").value(4));
 	}
+	@Test
+	@DisplayName("Calculator2 test resulting in non-integer average")
+	void Calculator2AverageRounding() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/calculator/calculate2?input=1,2,2"))
+				.andExpect(status().is2xxSuccessful())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.squared").value(Matchers.containsInAnyOrder(1,4,4)))
+				.andExpect(jsonPath("$.maxEven").value(2))
+				.andExpect(jsonPath("$.averageOfPositives").value(1.67));
+	}
 }
