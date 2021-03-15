@@ -15,16 +15,19 @@ public class SquaredTest {
     void squaredNullInputReturnsNull() {
         assertNull(Squared.squared(null));
     }
+
     @Test
     @DisplayName("Squared returns squares of positive numbers")
     void squaredReturnsSquaresOnPositives() {
         assertEquals(List.of(1, 4, 9), Squared.squared(List.of(1, 2, 3)));
     }
+
     @Test
     @DisplayName("Squared returns squares of negative numbers")
     void squaredReturnsSquaresOnNegatives() {
         assertEquals(List.of(1, 4, 9), Squared.squared(List.of(-1, -2, -3)));
     }
+
     @Test
     @DisplayName("Squared returns squares of positive and negative numbers")
     void squaredReturnsSquaresOnPositivesAndNegatives() {

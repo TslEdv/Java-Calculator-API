@@ -13,7 +13,7 @@ public class MaxEvenTest {
     @Test
     @DisplayName("MaxEven returns largest even number out of List")
     void maxEvenReturnsLargestEvenNumber() {
-        assertEquals(6, MaxEven.maxEven(List.of(1,2,4,6)));
+        assertEquals(6, MaxEven.maxEven(List.of(1, 2, 4, 6)));
     }
 
     @Test
@@ -25,12 +25,12 @@ public class MaxEvenTest {
     @Test
     @DisplayName("MaxEven returns largest even negative number out of List")
     void maxEvenReturnsLargestEvenNegativeNumber() {
-        assertEquals(-2, MaxEven.maxEven(List.of(-1,-2,-4,-6)));
+        assertEquals(-2, MaxEven.maxEven(List.of(-1, -2, -4, -6)));
     }
 
     @Test
     @DisplayName("MaxEven returns null if list is only odd numbers")
     void maxEvenReturnsNullIfListIsOnlyOddNumbers() {
-        assertNull(MaxEven.maxEven(List.of(1,-3,-5,7)));
+        assertNull(MaxEven.maxEven(List.of(1, -3, -5, 7)));
     }
 }

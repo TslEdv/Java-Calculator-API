@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class CalculatorService {
     public CalculationResult calculate1(List<Integer> numbers) {
-        if(numbers.isEmpty()){
+        if (numbers.isEmpty()) {
             return null;
         }
         CalculationResult result = new CalculationResult();
@@ -23,7 +23,7 @@ public class CalculatorService {
     }
 
     public CalculationResult calculate2(List<Integer> numbers) {
-        if(numbers.isEmpty()){
+        if (numbers.isEmpty()) {
             return null;
         }
         CalculationResult result = new CalculationResult();

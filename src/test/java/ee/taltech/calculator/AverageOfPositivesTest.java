@@ -15,24 +15,28 @@ public class AverageOfPositivesTest {
     void averageOfPositivesReturnsNullOnNullInput() {
         assertNull(AverageOfPositives.averageOfPositives(null));
     }
+
     @Test
     @DisplayName("AverageOfPositives returns integer of positive number input")
     void averageOfPositivesReturnsAverageOfPositives() {
-        assertEquals(4,AverageOfPositives.averageOfPositives(List.of(2,4,6)));
+        assertEquals(4, AverageOfPositives.averageOfPositives(List.of(2, 4, 6)));
     }
+
     @Test
     @DisplayName("AverageOfPositives does not take negatives into account")
     void averageOfPositivesOnlyCalculatesPositives() {
-        assertEquals(4,AverageOfPositives.averageOfPositives(List.of(2,-6,4,6,-8)));
+        assertEquals(4, AverageOfPositives.averageOfPositives(List.of(2, -6, 4, 6, -8)));
     }
+
     @Test
     @DisplayName("AverageOfPositives returns 0 on negative numbers")
     void averageOfPositivesReturnsZeroOnNegatives() {
-        assertEquals(0,AverageOfPositives.averageOfPositives(List.of(-2,-4,-6)));
+        assertEquals(0, AverageOfPositives.averageOfPositives(List.of(-2, -4, -6)));
     }
+
     @Test
     @DisplayName("AverageOfPositives rounds correctly")
     void averageOfPositivesRoundsCorrectly() {
-        assertEquals(1.67,AverageOfPositives.averageOfPositives(List.of(1,2,2)));
+        assertEquals(1.67, AverageOfPositives.averageOfPositives(List.of(1, 2, 2)));
     }
 }

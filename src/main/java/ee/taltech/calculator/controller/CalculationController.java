@@ -18,11 +18,12 @@ public class CalculationController {
     private final CalculatorService calculatorService;
 
     @GetMapping(value = "/calculate1")
-    public CalculationResult calculate1 (@RequestParam List<Integer> input) {
+    public CalculationResult calculate1(@RequestParam List<Integer> input) {
         return calculatorService.calculate1(input);
     }
+
     @GetMapping(value = "/calculate2")
-    public CalculationResult calculate2 (@RequestParam List<Integer> input) {
+    public CalculationResult calculate2(@RequestParam List<Integer> input) {
         return calculatorService.calculate2(input);
     }
 }

@@ -9,6 +9,6 @@ public class Squared {
         if (integers == null) {
             return null;
         }
-        return integers.stream().map(e->e*e).collect(Collectors.toList());
+        return integers.stream().map(e -> e * e).collect(Collectors.toList());
     }
 }
