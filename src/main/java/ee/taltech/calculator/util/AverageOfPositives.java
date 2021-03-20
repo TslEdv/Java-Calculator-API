@@ -1,5 +1,7 @@
 package ee.taltech.calculator.util;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,8 @@ public class AverageOfPositives {
             return null;
         }
         Double average = numbers.stream().filter(e -> e > 0).mapToDouble(e -> e).average().orElse(0);
-        return ((double) (Math.round(average * 100))) / 100;
+        BigDecimal bdAverage = new BigDecimal(Double.toString(average));
+        bdAverage = bdAverage.setScale(2, RoundingMode.HALF_UP);
+        return bdAverage.doubleValue();
     }
 }
