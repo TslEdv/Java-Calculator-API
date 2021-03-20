@@ -27,7 +27,7 @@ public class API1_Phones {
     // A Add necessary annotations to this class so this class can serve data
     // B Add a method to query all the phones (method content is not important - I am grading urls, annotations, names, and parameters)
     @GetMapping(value="/")
-    public List<Phone> phones(@RequestParam Optional<Integer> year, Optional<String> manufacturer){
+    public List<Phone> phones(@RequestParam Optional<Integer> year, @RequestParam Optional<String> manufacturer){
         return null;
     }
     // C Add a method to query a single phone by it's unique identifier (method content is not important - I am grading urls, annotations, names, and parameters)
@@ -42,23 +42,18 @@ public class API1_Phones {
     // F write pseudocode for saving a new phone (add annotations or http method names, urls, necessary parameters)
     /*
     @PostMapping(value="/createPhone")
-    public void newPhone(@RequestParam String manufacturer, String modelNr, Integer year){
-        Phone phone = new Phone(); //constructor generates ID automatically
-        phone.setManufacturer(manufacturer);
-        phone.setModel(modelNr);
-        phone.setReleaseYear(year);
+    public void newPhone(@RequestBody Phone phone){
+        Phone phone = new Phone(phone);
     }
     // G write pseudocode for updating existing phone (add annotations or http method names, urls, necessary parameters)
     @PostMapping(value="/updatePhone")
-    public void updatePhone(@RequestParam long id, Optional<String> manufacturer, Optional<String> modelNr, Optional<Integer> year){
-        Phone phone = getPhone(id);
-        phone.setManufacturer(manufacturer);
-        phone.setModel(modelNr);
-        phone.setReleaseYear(year);
+    public void updatePhone(@PathVariable long id, @RequestBody Phone phone){
+        Phone toUpdate = getPhone(id);
+        toUpdate = phone;
     }
     // H write pseudocode for deleting a phone (add annotations or http method names, urls, necessary parameters)
     @PostMapping(value="/deletePhone")
-    public void deletePhone(@RequestParam long id){
+    public void deletePhone(@PathVariable long id){
         deletePhone(getPhone(id));
     }
      */
