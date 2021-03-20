@@ -25,8 +25,8 @@ public class API3_Headphones {
     // Management wants to define an API endpoint so frontend can display data about headphones (think headphones e-shop)
     // A Add necessary annotations to this class so this class can serve data
     // B Add a method to query all the headphones (method content is not important - I am grading urls, annotations, names, and parameters)
-    /* @GetMapping(value = "/")
-    public List<Headphone> headphones(@RequestParam String price, String anc){
+    @GetMapping(value = "/")
+    public List<Headphone> headphones(@RequestParam String price, @RequestParam String anc){
         return null;
     }
     // C Add a method to query a single headphones by it's unique identifier (method content is not important - I am grading urls, annotations, names, and parameters)
@@ -34,7 +34,6 @@ public class API3_Headphones {
     public Headphone headphone(@PathVariable Long id){
         return null;
     }
-     */
     // D Modify an existing method to query/filter headphones by price while keeping existing functionality (price can be a string)
 
     // E Modify an existing method to query/filter anc (active noise cancellation) while keeping existing functionality (anc can be a string)
