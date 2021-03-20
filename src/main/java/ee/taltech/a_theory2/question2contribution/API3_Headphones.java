@@ -41,23 +41,19 @@ public class API3_Headphones {
     //todo theoretical assignment
     // F write pseudocode for saving a new pair of headphones (add annotations or http method names, urls, necessary parameters)
     // @GetMapping(value = "/createHeadphone")
-    // public void createHeadphone(@RequestParam  String manufacturer, String price, String anc, String rating, String releaseYear){
+    // public void createHeadphone(@RequestBody Headphone headphone){
+    // Headphone headphone =  new Headphone(headphone);
     // }
     // G write pseudocode for updating existing pair of headphones (add annotations or http method names, urls, necessary parameters)
     /* @GetMapping(value = "/updateHeadphone")
-      public void updateHeadphone(@RequestParam Long id, Optional<String> manufacturer, Optional<String> price, Optional<String> anc, Optional<String> rating, Optional<String> releaseYear){
-        Headphone headphone = new Headphone();
-        headphone.setPrice(price);
-        headphone.setAnc(anc);
-        headphone.setRating(rating);
-        headphone.setReleaseYear(releaseYear);
-        headphone.setManufacturer(manufacturer);
-
+      public void updateHeadphone(@PathVariable Long id, @RequestBody Headphone headphone){
+        Headphone toUpdate = getHeadphone(id);
+        toUpdate = Headphone;
     }
      */
     // H write pseudocode for deleting a pair of headphones (add annotations or http method names, urls, necessary parameters)
     /* @GetMapping(value = "/removeHeadphone")
-    public void removeHeadphone(@RequestParam Long id){
+    public void removeHeadphone(@PathVariable Long id){
         removeHeadphone(getHeadphone(id));
     }
     */
