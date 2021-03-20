@@ -42,18 +42,28 @@ public class API2_Cakes {
     //todo theoretical assignment
     // F write pseudocode for saving a new cake (add annotations or http method names, urls, necessary parameters)
     // @PostMapping (value = "/bakecake")
-    // public void bakeCake(@RequestBody Cake cake){
-    //      Cake freshcake = new Cake();
+    // public Cake bakeCake(@RequestBody Cake cake){
+    //      return cakeRepository.save(cake);
     // }
     // G write pseudocode for updating existing cake (add annotations or http method names, urls, necessary parameters)
     // @PutMapping (value = "/oldcakerefreshed")
-    // public void oldCake(@PathVariable Long id, @RequestBody Cake cake){
-    //      Cake oldcake = getCake(id);
-    //      oldcake = cake;
+    // public Cake oldCake(@PathVariable Long id, @RequestBody Cake cakeDetails){
+    //      Cake cake = cakeRepository.findById(id);
+    //      cake.setName(cakeDetails.getName());
+    //      cake.setSweetness(cakeDetails.getSweetness());
+    //      cake.setSize(cakeDetails.getSize());
+    //      cake.setWeight(cakeDetails.getWeight());
+    //      cake.setRating(cakeDetails.getRating());
+    //      final Cake updatedCake = cakeRepository.save(cake);
+    //      return ResponseEntity.ok(updatedCake);
     // }
     // H write pseudocode for deleting a cake (add annotations or http method names, urls, necessary parameters)
     // @DeleteMapping ( value = "/eatcake/{id}")
-    // public void oldCake(@PathVariable Long id){
-    //      delete(getCake(id));
+    // public Map<String, Boolean> oldCake(@PathVariable Long id){
+    //      Cake cake = cakeRepository.findById(id);
+    //      cakeRepository.delete(cake);
+    //      Map<String, Boolean> response = new HashMap<>();
+    //      response.put("deleted", Boolean.TRUE);
+    //      return response;
     // }
 }
