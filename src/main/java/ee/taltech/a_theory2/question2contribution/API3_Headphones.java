@@ -1,9 +1,12 @@
 package ee.taltech.a_theory2.question2contribution;
 
 import ee.taltech.a_theory2.question2contribution.classes.Headphone;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -26,7 +29,7 @@ public class API3_Headphones {
     // A Add necessary annotations to this class so this class can serve data
     // B Add a method to query all the headphones (method content is not important - I am grading urls, annotations, names, and parameters)
     @GetMapping(value = "/")
-    public List<Headphone> headphones(@RequestParam String price, @RequestParam String anc){
+    public List<Headphone> headphones(@RequestParam Optional<String> price, @RequestParam Optional<String> anc){
         return null;
     }
     // C Add a method to query a single headphones by it's unique identifier (method content is not important - I am grading urls, annotations, names, and parameters)
@@ -40,21 +43,31 @@ public class API3_Headphones {
 
     //todo theoretical assignment
     // F write pseudocode for saving a new pair of headphones (add annotations or http method names, urls, necessary parameters)
-    // @GetMapping(value = "/createHeadphone")
-    // public void createHeadphone(@RequestBody Headphone headphone){
-    // Headphone headphone =  new Headphone(headphone);
+    // @PostMapping (value = "/createHeadphone")
+    // public Headphone (@RequestBody Headphone headphone){
+    // return headphone.Repository.save(headphone);
     // }
     // G write pseudocode for updating existing pair of headphones (add annotations or http method names, urls, necessary parameters)
-    /* @GetMapping(value = "/updateHeadphone")
-      public void updateHeadphone(@PathVariable Long id, @RequestBody Headphone headphone){
-        Headphone toUpdate = getHeadphone(id);
-        toUpdate = Headphone;
+    /*@PutMapping(value = "/updateHeadphone")
+      public Headphone updateHeadphone(@PathVariable Long id, @RequestBody Headphone headphone.Details){
+        Headphone headphone = headphone.Repository.findById(id);
+        headphone.setManufacturer(headphone.Details.getManufacturer());
+        headphone.setPrice(headphone.Details.getPrice);
+        headphone.setRating(headphone.Details.getRating());
+        headphone.setAnc(headphone.Details.getAnc());
+        headphone.setReleaseYear(headphone.Details.getReleaseYear());
+        final Headphone updateHeadphone = headphoneRepository.save(headphone);
+        return ResponseEntity.ok(updateHeadphone);
     }
      */
     // H write pseudocode for deleting a pair of headphones (add annotations or http method names, urls, necessary parameters)
-    /* @GetMapping(value = "/removeHeadphone")
-    public void removeHeadphone(@PathVariable Long id){
-        removeHeadphone(getHeadphone(id));
+    /* @DeleteMapping(value = "/removeHeadphone")
+    public Map<String, Boolean>  deleteHeadphone(@PathVariable Long id){
+        Headphone headphone = headphoneRepository.findById(id);
+        headphoneRepository.delete(headphone);
+         Map<String, Boolean> response = new HashMap<>();
+         response.put("delete", Boolean.TRUE);
+         return response;
     }
     */
     //
