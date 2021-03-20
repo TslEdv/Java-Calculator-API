@@ -35,25 +35,25 @@ public class API2_Cakes {
     public List<Cake> cakes (@RequestParam Optional<String> name, @RequestParam Optional<String> weight){
         return null;
     }
-    @GetMapping( value = "/cakeid")
+    @GetMapping( value = "/{id}")
     public Cake cake(@RequestParam Long id){
          return null;
     }
     //todo theoretical assignment
     // F write pseudocode for saving a new cake (add annotations or http method names, urls, necessary parameters)
-    // @GetMapping ( value = "/bakecake")
+    // @PostMapping (value = "/bakecake")
     // public void bakeCake(@RequestBody Cake cake){
     //      Cake freshcake = new Cake();
     // }
     // G write pseudocode for updating existing cake (add annotations or http method names, urls, necessary parameters)
-    // @GetMapping ( value = "/oldcake")
-    // public void oldCake(@RequestParam Long id, @RequestBody Cake cake){
+    // @PutMapping (value = "/oldcakerefreshed")
+    // public void oldCake(@PathVariable Long id, @RequestBody Cake cake){
     //      Cake oldcake = getCake(id);
     //      oldcake = cake;
     // }
     // H write pseudocode for deleting a cake (add annotations or http method names, urls, necessary parameters)
-    // @GetMapping ( value = "/eatcake")
-    // public void oldCake(@RequestParam Long id){
+    // @DeleteMapping ( value = "/eatcake/{id}")
+    // public void oldCake(@PathVariable Long id){
     //      delete(getCake(id));
     // }
 }
