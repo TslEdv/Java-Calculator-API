@@ -42,19 +42,27 @@ public class API1_Phones {
     // F write pseudocode for saving a new phone (add annotations or http method names, urls, necessary parameters)
     /*
     @PostMapping(value="/createPhone")
-    public void newPhone(@RequestBody Phone phone){
-        Phone phone = new Phone(phone);
+    public Phone newPhone(@RequestBody Phone phone){
+        return phoneRepository.save(phone);
     }
     // G write pseudocode for updating existing phone (add annotations or http method names, urls, necessary parameters)
-    @PostMapping(value="/updatePhone")
-    public void updatePhone(@PathVariable long id, @RequestBody Phone phone){
-        Phone toUpdate = getPhone(id);
-        toUpdate = phone;
+    @PutMapping(value="/updatePhone")
+    public Phone updatePhone(@PathVariable long id, @RequestBody Phone phoneDetails){
+        Phone phone = phoneRepository.findById(id);
+        phone.setReleaseYear(phoneDetails.getReleaseYear());
+        phone.setManufacturer(phoneDetails.getManufacturer());
+        phone.setRating(phoneDetails.getRating());
+        final Phone updatedPhone = phoneRepository.save(phone);
+        return ResponseEntity.ok(updatedPhone);
     }
     // H write pseudocode for deleting a phone (add annotations or http method names, urls, necessary parameters)
-    @PostMapping(value="/deletePhone")
-    public void deletePhone(@PathVariable long id){
-        deletePhone(getPhone(id));
+    @DeleteMapping(value="/deletePhone")
+    public Map<String, Boolean> deletePhone(@PathVariable long id){
+        Phone phone = phoneRepository.findById(id);
+        phoneRepository.delete(phone);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
     }
      */
 }
