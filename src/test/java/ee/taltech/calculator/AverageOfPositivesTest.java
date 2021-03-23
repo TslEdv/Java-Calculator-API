@@ -39,4 +39,10 @@ public class AverageOfPositivesTest {
     void averageOfPositivesRoundsCorrectly() {
         assertEquals(1.67, AverageOfPositives.averageOfPositives(List.of(1, 2, 2)));
     }
+
+    @Test
+    @DisplayName("AverageOfPositives rounds down")
+    void averageOfPositivesRoundsDown() {
+        assertEquals(1.33, AverageOfPositives.averageOfPositives(List.of(1, 2, 1)));
+    }
 }
